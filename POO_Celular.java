@@ -1,20 +1,32 @@
-class Celular_Demo {
+import java.util.Scanner;
+public class Main{
     public static void main (String [] args) {
-        // Crie dois diferentes Objetos de Celular
-        Celular celular1 = new Celular();
-        Celular celular2 = new Celular();
+        Celular celular = new Celular();
+        Scanner ler = new Scanner(System.in);
         
-        // Invocar os métodos de todos esses objetos
-        System.out.println("Celular 1");
-        celular1.estado_power("Ligado");
-        celular1.baixar_app(3);
-        celular1.carga_atual(90);
-        celular1.imprimeStatus();
+        System.out.print("Digite a carga atual do celular: ");
+        celular.carga_atual(ler.nextInt());
         
-        System.out.println("Celular 2");
-        celular2.estado_power("Desligado");
-        celular1.baixar_app(5);
-        celular2.carga_atual(24);
-        celular2.imprimeStatus();
+        System.out.print("Digite a quantidade de armazenamento usada em Mb: ");
+        celular.armazenamento_atual(ler.nextInt());
+        
+        celular.imprimeStatus1();
+        
+        
+        System.out.println("\nCelular está desligado...");
+        System.out.print("Ligar celular?(0=s/1=n) ");
+        celular.estado_power(ler.nextInt());
+        
+        System.out.print("Digite o tamanho do app que irá baixar em Mb: ");
+        celular.baixar_app(ler.nextInt());
+        
+        System.out.print("Carregar celular?(0=s/1=n) ");
+        celular.mudar_carga(ler.nextInt());
+        
+        System.out.print("Digite a quantidade de tempo que usou o celular em horas: ");
+        celular.usar_app(ler.nextInt());
+        celular.imprimeStatus2();
+        
+        
     }
 }
