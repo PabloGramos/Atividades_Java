@@ -6,33 +6,37 @@ public class Main{
         int pessoas = 0, capMx=0, andar=0, i=0, muda=0;
         
         System.out.print("Informe a capacidade maxima de pessoas do elevador: ");
-        painel.capacidade(entrada.nextInt());
+        painel.setcapacidade(entrada.nextInt());
         
         System.out.print("Informe quantas pessoas entraram no elevador: ");
-        painel.qtdP(entrada.nextInt());
+        painel.setqtdP(entrada.nextInt());
         
         System.out.print("Informe quantos andares o predio possui desconsiderando o terreo: ");
-        painel.andares(entrada.nextInt());
+        painel.setandares(entrada.nextInt());
         
-        painel.imprime_status();
+        System.out.println("\n============Elevador============");
+        System.out.println("Andar| " + painel.getterreo() + " |  Nº de Pessoas | " + painel.getpessoas() + " |");
+        System.out.println("================================");
         
         while(i == 0){
             System.out.println("Subir = 0");
             System.out.print("Descer = 1: ");
             if (entrada.nextInt() == 0)
-                painel.sobe(1);
+                painel.setsobe(1);
             else if(entrada.nextInt() == 1)
-                painel.desce(1);
+                painel.setdesce(1);
             else{
                 System.out.println("Opção inválida!");
                 break;
             }
             System.out.print("Quantas pessoas entraram? ");
-            painel.entra(entrada.nextInt());
+            painel.setentra(entrada.nextInt());
             System.out.print("Quantas pessoas sairam? ");
-            painel.sai(entrada.nextInt());
+            painel.setsai(entrada.nextInt());
             
-            painel.imprime_status();
+            System.out.println("\n============Elevador============");
+            System.out.println("Andar| " + painel.getterreo() + " |  Nº de Pessoas | " + painel.getpessoas() + " |");
+            System.out.println("================================");
             
             System.out.print("Sair=0/continuar=1: ");
             if (entrada.nextInt() == 0)

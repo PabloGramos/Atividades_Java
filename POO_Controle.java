@@ -17,15 +17,15 @@ public class Main{
             System.out.print("===>");
             i = entrada.nextInt();
             if(i == 1)
-                TV.mais_volume(1);
+                TV.setmais_volume(1);
             else if(i == 2)
-                TV.menos_volume(1);
+                TV.setmenos_volume(1);
             else if(i == 3)
-                TV.Pcanal(1);
+                TV.setPcanal(1);
             else if(i == 4)
-                TV.Vcanal(1);
+                TV.setVcanal(1);
             else if(i == 5){
-                TV.desligar();
+                System.out.println("Desligando...");
                 break;
             }
             else{
@@ -33,8 +33,9 @@ public class Main{
                 break;
             }
             TV.programacao();
-            TV.imprimeStatus();
+            System.out.println("\n==============================");
+            System.out.println("Canal: " + TV.getcanal() + "/ Volume: " + TV.getvolume());
+            System.out.println("==============================");
         }
-    
     }
 }

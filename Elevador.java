@@ -1,54 +1,58 @@
 class Elevador{
-    int pessoas = 0, capMx=0, andar=0, terreo=0;
+    private int pessoas, capMx, andar, terreo;
     
-    void capacidade(int newValue){
-        capMx = newValue;
+    public Elevador(){
+        
     }
-    void qtdP(int newValue){
-        pessoas = newValue;
+
+    public void setcapacidade(int newValue){
+        this.capMx = newValue;
     }
-    void andares(int newValue){
-        andar = newValue;
+    public void setqtdP(int newValue){
+        this.pessoas = newValue;
     }
-    void sobe(int newValue){
-        if((terreo + 1) > andar){
+    public void setandares(int newValue){
+        this.andar = newValue;
+    }
+    public void setsobe(int newValue){
+        if((this.terreo + 1) > this.andar){
             System.out.println("Limite alcançado! ");
         }
         else{
-            terreo = terreo + 1;
+            this.terreo = this.terreo + 1;
         }
     }
-    void desce(int newValue){
-        if((terreo - 1) < 0){
+    public void setdesce(int newValue){
+        if((this.terreo - 1) < 0){
             System.out.println("Já chegou ao terreo! ");
         }
         else{
-            terreo = terreo - 1;
+            this.terreo = this.terreo - 1;
         }
     }
     
     
-    void entra(int increment){
-        if((pessoas + increment) > capMx){
+    public void setentra(int increment){
+        if((this.pessoas + increment) > this.capMx){
             System.out.println("Capacidade maxima alcançada!");
         }
         else{
-            pessoas = pessoas + increment;
+            this.pessoas = this.pessoas + increment;
         }
     }
-    void sai(int decrement){
-        if((pessoas - decrement) < 0){
-            System.out.println("Restam apenas " + pessoas + " pessoas para descer!");
+    public void setsai(int decrement){
+        if((this.pessoas - decrement) < 0){
+            System.out.println("Restam apenas " + this.pessoas + " pessoas para descer!");
         }
         else{
-           pessoas = pessoas - decrement; 
+           this.pessoas = this.pessoas - decrement; 
         }
     }
-    
-    void imprime_status(){
-        System.out.println("\n============Elevador============");
-        System.out.println("Andar| " + terreo + " |  Nº de Pessoas | " + pessoas + " |");
-        System.out.println("================================");
+    public int getterreo(){
+        return this.terreo;
+    }
+    public int getpessoas(){
+        return this.pessoas;
     }
     
 }

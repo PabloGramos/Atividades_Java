@@ -1,45 +1,63 @@
-class Celular {
-    String power = "";
-    int carga = 0;
-    int armazenamento = 400;
+public class Celular {
+    private String power;
+    private int carga;
+    private int armazenamento = 400;
     
-    void estado_power(int newValue) {
+    public Celular(){
+        
+    }
+
+    public void setestado_power(int newValue) {
         if(newValue == 0)
-            power = "Ligado";
+            this.power = "Ligado";
         else{
-            power = "Desligado";
+            this.power = "Desligado";
             System.out.println("Celular está desligado e não tem como utilizar.");
             System.exit(0);
         }
     }
-    void carga_atual(int newValue) {
-        carga = newValue;
-    }
-    void mudar_carga(int increment) {
-        if(increment == 0)
-            carga = 100;
-    }
-    void baixar_app(int increment) {
-        armazenamento = armazenamento + increment;
-    }
-    void usar_app(int decrement) {
-        carga = carga - (decrement * 2);
-    }
-    void armazenamento_atual(int newValue) {
-        armazenamento = newValue;
+    public String getestado_power(){
+        return this.power;
     }
     
-    void imprimeStatus1() {
-        System.out.println("Atualmente está com " + carga +"% de carga e " + armazenamento + "Mb de memoria utilizada.");
+    
+    public void setcarga_atual(int newValue) {
+        this.carga = newValue;
     }
-    void imprimeStatus2() {
-        if(carga < 0){
-            System.out.println("Atualmente está descarregado, com "+armazenamento+"Mb de memoria utilizada ");
-        }
-        else{
-            System.out.println("Atualmente está " +
-            power + ", carga de " +
-            carga + "%, " + "memoria utilizada " + armazenamento + "Mb");
-        }
+    public int getcarga_atual(){
+        return this.carga;
+    }
+    
+    
+    public void setmudar_carga(int increment) {
+        if(increment == 0)
+            this.carga = 100;
+    }
+    public int getmudar_carga(){
+        return this.carga;
+    }
+    
+    
+    public void setbaixar_app(int increment) {
+        this.armazenamento = this.armazenamento + increment;
+    }
+    public int getbaixar_app(){
+        return this.armazenamento;
+    }
+    
+    
+    public void setusar_app(int decrement) {
+        this.carga = this.carga - (decrement * 2);
+    }
+    public int getusar_app(){
+        return this.carga;
+    }
+    
+    
+    public void setarmazenamento_atual(int newValue) {
+        this.armazenamento = newValue;
+    }
+    public int getarmazenamento_atual(){
+        return this.armazenamento;
     }
 }

@@ -1,32 +1,42 @@
 import java.util.Scanner;
-public class Main{
+public class Main
+{
     public static void main (String [] args) {
-        Celular celular = new Celular();
+        Celular c1;
+        c1 = new Celular();
         Scanner ler = new Scanner(System.in);
         
         System.out.print("Digite a carga atual do celular: ");
-        celular.carga_atual(ler.nextInt());
+        c1.setcarga_atual(ler.nextInt());
         
         System.out.print("Digite a quantidade de armazenamento usada em Mb: ");
-        celular.armazenamento_atual(ler.nextInt());
+        c1.setarmazenamento_atual(ler.nextInt());
         
-        celular.imprimeStatus1();
+        System.out.println("Atualmente está com " + c1.getcarga_atual() +"% de carga e " + c1.getarmazenamento_atual() + "Mb de memoria utilizada.");
         
         
         System.out.println("\nCelular está desligado...");
         System.out.print("Ligar celular?(0=s/1=n) ");
-        celular.estado_power(ler.nextInt());
+        c1.setestado_power(ler.nextInt());
         
         System.out.print("Digite o tamanho do app que irá baixar em Mb: ");
-        celular.baixar_app(ler.nextInt());
+        c1.setbaixar_app(ler.nextInt());
         
         System.out.print("Carregar celular?(0=s/1=n) ");
-        celular.mudar_carga(ler.nextInt());
+        c1.setmudar_carga(ler.nextInt());
         
         System.out.print("Digite a quantidade de tempo que usou o celular em horas: ");
-        celular.usar_app(ler.nextInt());
-        celular.imprimeStatus2();
+        c1.setusar_app(ler.nextInt());
         
         
+        if(c1.getcarga_atual() < 0){
+            System.out.println("Atualmente está descarregado, com " + c1.getarmazenamento_atual() + "Mb de memoria utilizada ");
+        }
+        else{
+            System.out.println("Atualmente está " +
+            c1.getestado_power() + ", carga de " +
+            c1.getcarga_atual() + "%, " + "memoria utilizada " + c1.getarmazenamento_atual() + "Mb");
+        }
+    
     }
 }
