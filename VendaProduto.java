@@ -3,6 +3,7 @@ public class VendaProduto{
 	private float qtd;
 	private float valor;
 	private float porcentagemDesconto;
+	private float valorUnidade;
 	
 	public VendaProduto(){
         
@@ -28,8 +29,9 @@ public class VendaProduto{
 	
 	public void setpreco(float valor){
 	    this.valor = valor * qtd;
-	    
+	    this.valorUnidade = valor;
 	}
+	
 	
 	public void setdesconto(float porcentagemDesconto){
 	    this.porcentagemDesconto = this.valor * (porcentagemDesconto / 100);
@@ -48,9 +50,10 @@ public class VendaProduto{
 	public float getdesconto(){
 	    return this.porcentagemDesconto;
 	}
-	
-	
-	
-	
-	
+	public float getunidade(){
+	    return this.valorUnidade;
+	}
+	public float getporcentagem(){
+	    return this.porcentagemDesconto;
+	}
 }
