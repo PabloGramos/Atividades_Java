@@ -6,25 +6,30 @@ public class Main
 	    Scanner entrada = new Scanner(System.in);
 	    VendaProduto vp;
 	    vp = new VendaProduto();
+	    float opcao = 0, qtd = 0;
 	    
-	    System.out.print("Produto: ");
-	    vp.setdescrever(entradaS.nextLine());
+	    System.out.println("=============Bem Vindo=============");
+	    System.out.print("Quantidade de Produtos: ");
+	    qtd = entrada.nextFloat();
 	    
-	    System.out.print("Quantidade: ");
-	    vp.setquantidade(entrada.nextFloat());
+	    for(int i=0;i<qtd;i++){
+	        System.out.print("\nProduto: ");
+	        vp.setdescrever(entradaS.nextLine());
 	    
-	    System.out.print("Preço por unidade: ");
-	    vp.setpreco(entrada.nextFloat());
+	        System.out.print("Quantidade: ");
+	        vp.setquantidade(entrada.nextFloat());
 	    
-	    System.out.print("Desconto em %: ");
+	        System.out.print("Preço por unidade: ");
+	        vp.setpreco(entrada.nextFloat());
+	    
+	        
+	        
+	        vp.contador();
+	    }
+	    System.out.print("\nDesconto em %: ");
 	    vp.setdesconto(entrada.nextFloat());
 	    
-	    
-		System.out.println("\n\nProduto: " + vp.getdescrever() + 
-		"\nPreço por unidade: " + vp.getunidade() + 
-		"\nQuantidade: " + vp.getquantidade() + 
-		"\nDesconto de " + vp.getporcentagem() + "%: " + vp.getdesconto() + "  de " + (vp.getunidade()*vp.getquantidade()) +
-		"R$\nValor: " + vp.getpreco() + "R$");
+	    vp.status();
 		
 	}
 }
