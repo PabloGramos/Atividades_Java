@@ -3,7 +3,7 @@ public class Produto {
     private int quantidade;
     private int quantidadeMinima;
     private float preco;
-    private int estoque = 200;
+    private int quantidadeDisponivel = 200;
     private Descrever descricao;
     
     public Produto(){
@@ -18,6 +18,9 @@ public class Produto {
     public void setAssocia(Descrever descricao){
         this.descricao = descricao;
     }
+    public Descrever getAssocia(){
+        return this.descricao;
+    }
     public void setreporEstoque(int quantidade){
         this.quantidade = quantidade;
     }
@@ -28,7 +31,7 @@ public class Produto {
         
     }
     public boolean getprecisaRepor(){
-        if(this.estoque <= quantidade)
+        if(this.quantidadeDisponivel <= quantidade)
             return true;
         else{
             return false;

@@ -21,6 +21,7 @@ public class Main {
         else{
             pd.setreporEstoque(verifica);
         }
+        pd.setAssocia(dc);
         while(true){
             System.out.println("");
             System.out.println("");
@@ -28,8 +29,9 @@ public class Main {
             System.out.println("");
         }
         
-        System.out.println("Código: " + dc.getCodigo());
-        System.out.println("Descrição: " + dc.getDescricao());
+        System.out.println("Código: " + pd.getAssocia().getCodigo());
+        
+        System.out.println("Descrição: " + pd.getAssocia().getDescricao());
         
     }
     
