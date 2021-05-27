@@ -1,30 +1,24 @@
 public class Hospede {
-    private String cpf;
     private String nome;
+    private String cpf;
     
-    public Hospede(){
-    }
-    
-    public Hospede(String cpf, String nome){
-        this.setCPF(cpf);
-        this.setNOME(nome);
+    public Hospede() {
     }
     
-    public String getCPF(){
-        return this.cpf;
+    public Hospede(String nome, String cpf) {
+        this.setNome(nome);
+        this.setCpf(cpf);
     }
-    public void setCPF(String cpf){
-        this.cpf = cpf;
-    }
-    public String getNOME(){
-        return this.nome;
-    }
-    public void setNOME(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
-    public void status(){
-        System.out.println("\nCliente: " + this.nome + "\nCPF: " + this.cpf);
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public String getNome() {
+        return this.nome;
+    }
+    public String getCpf() {
+        return this.cpf;
     }
 }
