@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-public class Main {
+public class Alunos_e_notas{
     public static void main(String[] args) {
         Scanner leiaS = new Scanner(System.in);
         Scanner leiaF = new Scanner(System.in);

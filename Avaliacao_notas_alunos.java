@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main
+public class Avaliacao_notas_alunos
 {
 	public static void main(String[] args) {
 	    Notas validar = new Notas();
